@@ -1,6 +1,6 @@
 import streamlit as st
-import web_scraper
-import text_processing
+from . import web_scraper
+from . import text_processing
 from io import StringIO
 from docx import Document #For reading microsoft word files
 
