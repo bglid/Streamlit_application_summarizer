@@ -1,4 +1,4 @@
-from . import utils
+import utils
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
