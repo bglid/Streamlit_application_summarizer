@@ -1,5 +1,11 @@
+import os
 import unittest
-from src.web_scraper import ln_job_scraper
+import sys
+print("Python Path:", sys.path)
+#Getting the path for the src package
+src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, src_path)
+from src.web_scraper import *
 
 ### TESTING that our webscraper can get a valid job url and returns none for an invalid one ###
 
@@ -17,7 +23,7 @@ class TestWebScraper(unittest.TestCase):
     def test_invalid_url(self):
         """Testing that an invalid URL returns None."""
         invalid_url = "https://www.linkedin.com/jobs/view/"
-        self.assertIsNone(invalid_url)
+        self.assertIsNone(ln_job_scraper(invalid_url))
         
         
 if __name__ == "__main__":
