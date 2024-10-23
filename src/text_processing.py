@@ -6,7 +6,7 @@ from spacy_streamlit import visualize_similarity
 #Grabbing the keywords from the description
 def keyword_rank(text):
     #Setting up the spacy model 
-    nlp = spacy.load('en_core_web_sm')
+    nlp = spacy.load('en_core_web_md')
     nlp.add_pipe('textrank') #Adding the keyword ranking
     
     #Error handling if the doc is blank:
