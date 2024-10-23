@@ -29,7 +29,8 @@ def main():
                     placeholder='Please select an option...')
 
     #Getting the URL to the job posting
-    job_url = st.text_input('Job Posting url', help='Make sure you link the url to the exact page of the job posting. I.e. not a related link to the posting')
+    job_url = st.text_input('Job Posting url', help='Make sure you link the url to the exact page of the job posting. I.e. not a related link to the posting',
+                            key='url')
     url_input = st.button('Submit Url')    
 
     # If there is no clear "About the Job" section, post text in manually for time being:
@@ -67,6 +68,14 @@ def main():
                 st.write(f'Posted {posting_time}')
                 with col_1:
                     similarity_score = compare_resume(resume_text, about_the_job)
+                    
+    #Creating a button to clear all the data caches
+    if st.button("Clear All"):
+        st.cache_data.clear()
+        # st.session_state['url'] = "" 
+
+        
+                
                 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 import streamlit as st
 
-
+#Adding Streamlit Caching to avoid re-calling the url multiple times unecessarily
+@st.cache_data
 def ln_job_scraper(job_url):
     """Webscraper for LinkedIn that returns the Job title (often including company and location)
     The Time it was posted, and the "About the Job" section of the posting.
