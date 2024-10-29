@@ -1,7 +1,6 @@
 import streamlit as st
 from web_scraper import ln_job_scraper
 from text_processing import keyword_rank, compare_resume
-from io import StringIO
 from docx import Document #For reading microsoft word files
 
 def main():
